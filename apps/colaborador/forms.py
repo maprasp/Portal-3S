@@ -112,18 +112,18 @@ class SuporteForm(forms.ModelForm):
 
 
 class ColaboradorBaseForm(forms.ModelForm):
-
-    documento_tipo = (
-        ("", ""),
-        ("RG", "RG"),
-        ("Passaporte", "Passaporte"),
-    )
+#J 
+#J     documento_tipo = (
+#J         ("", ""),
+#J         ("RG", "RG"),
+#J         ("Passaporte", "Passaporte"),
+#J     )
 
 
     divisao = DivisaoChoiceField(queryset=Divisao.objects.all(), label="Divisão | Coordenação")
     responsavel = forms.ModelChoiceField(queryset=Colaborador.objects.filter(Q(groups__name="Responsavel")).distinct(), label="Responsável", widget=forms.Select(attrs={"data-live-search": "True"}),required=False,)
     last_name = forms.CharField(max_length=255, label="Sobrenome(s)")
-    documento_tipo = forms.ChoiceField(choices=documento_tipo, label="Tipo Documento")
+#J    documento_tipo = forms.ChoiceField(choices=documento_tipo, label="Tipo Documento")
     email = forms.EmailField()
     class Meta:
         model = Colaborador
@@ -131,11 +131,11 @@ class ColaboradorBaseForm(forms.ModelForm):
             "first_name",
             "last_name",
             "email",
-            "data_nascimento",
-            "telefone",
-            "cpf",
-            "documento_tipo",
-            "documento",
+#J            "data_nascimento",
+#J            "telefone",
+#J            "cpf",
+#J            "documento_tipo",
+#J            "documento",
             "vinculo",
             "predio",
             "divisao",
@@ -158,7 +158,9 @@ class ColaboradorForm(ColaboradorBaseForm, GarbModelForm):
         model = Colaborador
         submit_text = "Enviar Informações"
         fieldsets = [
-            ("Informações Pessoais", {"fields": ("first_name", "last_name", "email", "data_nascimento", "telefone", "cpf", "documento_tipo", "documento",)}),
+#J            ("Informações Pessoais", {"fields": ("first_name", "last_name", "email", "data_nascimento", "telefone", "cpf", "documento_tipo", "documento",)}),
+            ("Informações Pessoais", {"fields": ("first_name", "last_name", "email",)}),
+
             ("Informações Profissionais", {"fields": ("vinculo", "predio", "divisao", "ramal", "responsavel", "data_inicio", "data_fim", "registro_inpe", "empresa", "externo")}),
             ("seus Direitos e Deveres", {"fields": ("check_me_out1", "check_me_out2", "check_me_out3")}),
         ]

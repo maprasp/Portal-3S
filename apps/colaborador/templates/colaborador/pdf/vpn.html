@@ -112,7 +112,7 @@
     Eu, <b>{{ colaborador.full_name }}</b>, declaro para os devidos fins estar ciente da legisla&ccedil;&atilde;o brasileira, suas leis e normas para uso de recursos computacionais, acesso &agrave; informa&ccedil;&atilde;o, direitos autorais e demais leis pertinentes, e ser totalmente respons&aacute;vel por meus atos no uso dessa VPN. Declaro ter lido e entendido as normas vigentes no INPE quanto ao uso de recursos computacionais (RE/DIR 518) e estar disposto a atend&ecirc;-las assumindo toda a responsabilidade por preju&iacute;zos causados. Declaro que estou ciente que a VPN vence no prazo solicitado acima e que farei sua revalida&ccedil;&atilde;o segundo as normas vigentes. Declaro ainda estar ciente e de acordo que ao t&eacute;rmino do meu v&iacute;nculo com o INPE o acesso ser&aacute; cancelado e que 90 dias ap&oacute;s o t&eacute;rmino do v&iacute;nculo os dados ser&atilde;o removidos. Caso necess&aacute;rio, este prazo poder&aacute; ser reavaliado, mediante uma nova requisi&ccedil;&atilde;o.
 </div>
 <div class="informacoes_left">
-    Email: <b>{{ colaborador.email|safe }}</b>&nbsp;&nbsp;&nbsp;Telefone: <b>{{ colaborador.telefone|safe }}</b><br> 
+    Email: <b>{{ colaborador.email|safe }}</b>&nbsp;&nbsp;&nbsp;<br> 
     Divis&atilde;o | Coordena&ccedil;&atilde;o: <b>{{ colaborador.divisao.full_name }}</b><br>
     {% if not colaborador.externo %}
         Ramal: <b>{{ colaborador.ramal|default_if_none:"Não informado" }}</b>&nbsp;&nbsp;&nbsp;

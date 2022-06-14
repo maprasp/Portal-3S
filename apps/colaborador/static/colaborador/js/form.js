@@ -60,10 +60,9 @@ $(document).ready(function () {
             last_name: { required: true, minlength: 3 },
             email: { required: true, email_inpe: true },
             externo: { externo: true },
-            telefone: { required: true, minlength: 8 },
-            data_nascimento: { required: true },
-            rg: { required: true },
-            cpf: { required: true },
+//J            telefone: { required: true, minlength: 8 },
+//J            data_nascimento: { required: true }, rg: { required: true },
+//J            cpf: { required: true },
             predio: { required: true },
             data_inicio: { required: true },
             vinculo: { required: true, min: 2 },
@@ -108,8 +107,8 @@ $(document).ready(function () {
 
     //Mascaras
     $('#id_ramal').mask('0000');
-    $('#id_cpf').mask('999.999.999-99');
-    $('#id_data_nascimento').mask('99/99/9999');
+//J    $('#id_cpf').mask('999.999.999-99');
+//J    $('#id_data_nascimento').mask('99/99/9999');
     $('#id_data_inicio').mask('99/99/9999');
     $('#id_data_fim').mask('99/99/9999');
     
@@ -122,7 +121,7 @@ $(document).ready(function () {
         }
     };
     
-    $('#id_telefone').mask(behavior, options);
+//J    $('#id_telefone').mask(behavior, options);
 });
 
 

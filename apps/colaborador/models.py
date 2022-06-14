@@ -19,11 +19,11 @@ class Vinculo(models.Model):
 
 
 class Colaborador(AbstractUser):
-    telefone = models.CharField("telefone", max_length=255)
-    data_nascimento = models.DateField("Data de Nascimento", max_length=255)
-    documento = models.CharField("Documento", max_length=255)
-    documento_tipo = models.CharField("Tipo Documento", max_length=255)
-    cpf = models.CharField("CPF", max_length=255, blank=True, null=True)
+#J    telefone = models.CharField("telefone", max_length=255)
+#J    data_nascimento = models.DateField("Data de Nascimento", max_length=255)
+#J    documento = models.CharField("Documento", max_length=255)
+#J    documento_tipo = models.CharField("Tipo Documento", max_length=255)
+#J    cpf = models.CharField("CPF", max_length=255, blank=True, null=True)
     predio = models.ForeignKey("core.Predio", verbose_name="Prédio", null=True, blank=True, on_delete=models.PROTECT)
     data_inicio = models.DateField("Data de Início")
     data_fim = models.DateField("Data de Fim", null=True, blank=True)
@@ -65,10 +65,10 @@ class Colaborador(AbstractUser):
             return self.email.replace("@inpe.br", "").lower()
         return self.__create_user_name(name).lower()
 
-    def get_documento_principal(self):
-        if self.cpf is None:
-            return f"{self.documento_tipo}: <b>{self.documento}</b>"
-        return f"CPF: <b>{self.cpf}</b>"
+#J    def get_documento_principal(self):
+#J        if self.cpf is None:
+#J            return f"{self.documento_tipo}: <b>{self.documento}</b>"
+#J        return f"CPF: <b>{self.cpf}</b>"
 
     def clean(self):
         from django.core.exceptions import ValidationError
