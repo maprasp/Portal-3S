@@ -1,0 +1,9 @@
+{% extends 'base_email.html' %}
+{% load garb_tags %}
+{% block content %}
+    <p>A conta do colaborador <b>{{name}}</b>, foi <b>AUTORIZADA</b> </p>
+    <br>
+    <p>Por favor</p>
+    <p>Crie a conta do Colaborador!</p>
+    <p>Se o mesmo n&atilde;o tiver email do INPE é necess&aacute;rio reservar nome para evitar conflitos.</p>
+{% endblock %}
